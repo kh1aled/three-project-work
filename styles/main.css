@@ -329,7 +329,7 @@ a {
 }
 @media (max-width: 992px) {
   .game .body .body-wrapper {
-    gap: 7rem;
+    gap: 2rem;
   }
 }
 @media (max-width: 768px) {
