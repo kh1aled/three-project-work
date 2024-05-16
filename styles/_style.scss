@@ -207,25 +207,35 @@ $width: 85%;
       width: 80%;
       height: 70%;
       left: 15%;
-      top: -22%;
+      top: -15%;
       position: relative;
-      @include mediaQuery($largeScreen_max_width) {
-        top: -13%;
+      @include mediaQuery($smallScreen_max_width) {
+        top: -31px;
+      }
+      @include mediaQuery($medScreen_max_width) {
+        top: -14%;
+      }
+      @include mediaQuery($largeScreen_min_width){
+        top: -28%;
       }
     }
     .play {
       width: 20vw;
       height: 15vw;
       position: absolute;
-      bottom: -10%;
+      bottom: 7%;
       left: 42%;
       animation: animateBtn 2s ease-in-out alternate-reverse infinite;
+      @include mediaQuery($smallScreen_max_width) {
+        bottom: 13%;
+      }
       @include mediaQuery($medScreen_max_width) {
-        bottom: -16%;
+        bottom: 12%;
       }
-      @include mediaQuery($smallScreen_min_width) {
-        bottom: 16%;
+      @include mediaQuery($largeScreen_min_width){
+        bottom: 19%;
       }
+      
 
       img {
         width: 100%;
@@ -395,12 +405,14 @@ $width: 85%;
           }
           .text {
             width: 100%;
+            padding:2%;
             @extend %text;
             background-color: $white-1;
             color: transparent;
             box-shadow: 0 0.25rem 0.25rem $shadow-1;
             border: 0.3125rem solid transparent;
             font-size: 3vh;
+            height: 10vh;
             &.active {
               background: #dd6a00;
               color: #ffffff !important;

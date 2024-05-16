@@ -251,30 +251,45 @@ a {
   width: 80%;
   height: 70%;
   left: 15%;
-  top: -22%;
+  top: -15%;
   position: relative;
 }
-@media (max-width: 1200px) {
+@media (max-width: 768px) {
   .game .homepage .title-image {
-    top: -13%;
+    top: -31px;
+  }
+}
+@media (max-width: 992px) {
+  .game .homepage .title-image {
+    top: -14%;
+  }
+}
+@media (min-width: 992px) {
+  .game .homepage .title-image {
+    top: -28%;
   }
 }
 .game .homepage .play {
   width: 20vw;
   height: 15vw;
   position: absolute;
-  bottom: -10%;
+  bottom: 7%;
   left: 42%;
   animation: animateBtn 2s ease-in-out alternate-reverse infinite;
 }
-@media (max-width: 992px) {
+@media (max-width: 768px) {
   .game .homepage .play {
-    bottom: -16%;
+    bottom: 13%;
   }
 }
-@media (min-width: 576px) {
+@media (max-width: 992px) {
   .game .homepage .play {
-    bottom: 16%;
+    bottom: 12%;
+  }
+}
+@media (min-width: 992px) {
+  .game .homepage .play {
+    bottom: 19%;
   }
 }
 .game .homepage .play img {
@@ -448,11 +463,13 @@ a {
 }
 .game .body .body-wrapper .cards .card-item .text {
   width: 100%;
+  padding: 2%;
   background-color: #fff;
   color: transparent;
   box-shadow: 0 0.25rem 0.25rem rgba(0, 0, 0, 0.25);
   border: 0.3125rem solid transparent;
   font-size: 3vh;
+  height: 10vh;
 }
 .game .body .body-wrapper .cards .card-item .text.active {
   background: #dd6a00;
