@@ -249,7 +249,7 @@ a {
 }
 .game .homepage .title-image {
   width: 80%;
-  height: 70%;
+  height: 75%;
   left: 15%;
   top: -15%;
   position: relative;
@@ -339,7 +339,7 @@ a {
   background-color: rgba(255, 255, 255, 0.75);
 }
 .game .body .body-wrapper {
-  gap: 17vh;
+  gap: 14vh;
   width: 90%;
 }
 @media (max-width: 992px) {
@@ -466,10 +466,13 @@ a {
   padding: 2%;
   background-color: #fff;
   color: transparent;
-  box-shadow: 0 0.25rem 0.25rem rgba(0, 0, 0, 0.25);
+  box-shadow: -1px 9px 1rem 4px rgba(0, 0, 0, 0.73);
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
   border: 0.3125rem solid transparent;
   font-size: 3vh;
   height: 10vh;
+  overflow: hidden;
 }
 .game .body .body-wrapper .cards .card-item .text.active {
   background: #dd6a00;
@@ -483,9 +486,7 @@ a {
   border-bottom-right-radius: 5px;
 }
 .game .body .body-wrapper .cards .card-item .text.animate {
-  animation-name: showCards;
-  animation-duration: 0.5s;
-  animation-iteration-count: 1;
+  animation: trueAnswer 0.5s ease-in;
 }
 
 .pop-overlay {
@@ -703,6 +704,18 @@ a {
   }
   100% {
     transform: scale(0);
+  }
+}
+@keyframes trueAnswer {
+  0% {
+    width: 0;
+  }
+  50% {
+    width: 120%;
+    background-color: rgb(40, 187, 255);
+  }
+  100% {
+    width: 100%;
   }
 }
 @keyframes scaleDown {

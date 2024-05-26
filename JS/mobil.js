@@ -23,27 +23,6 @@ animationCounter = 0,
  isRunning = false,
  textCounter = 0,
  wrongAnswers = 0;
-
- function loadScript(src){
-  var script = document.querySelector(".script");
-  console.log(script);
-  script.src = src;
-  script.async = true;
-  document.head.appendChild(script);
-}
-
-function checkScript(){
-  if('ontouchstart' in window){
-    loadScript('./JS/mobil.js');
-    console.log("mobil");
-  }else{
-    loadScript('./JS/script.js');
-    console.log('computer');
-  }
-}
-checkScript();
-
-
 const animateInfo = () => {
   infoIcon.classList.add("show");
   infoIcon.addEventListener("animationend", () => {
@@ -90,9 +69,9 @@ function animateMatchCard() {
   });
 }
 
-playButton.addEventListener("click", () => {
+playButton.addEventListener("touchstart", () => {
   console.log('start');
-  openFullscreen()
+  openFullscreen();
   document.querySelector("#start-audio").play();
   game.style.backgroundImage = "url(./media/images/bg2.png)";
   homepage.classList.add("hide");
@@ -112,7 +91,8 @@ playButton.addEventListener("click", () => {
   }
 });
 
-pauseButton.addEventListener("click", () => {
+
+pauseButton.addEventListener("touchstart", () => {
   const hiddenIcon = pauseButton.querySelector("i.hide");
   const shownIcon = pauseButton.querySelector("i:not(.hide)");
   hiddenIcon.classList.remove("hide");
@@ -126,15 +106,16 @@ pauseButton.addEventListener("click", () => {
 });
 
 textItems.forEach((textItem) => {
-  textItem.addEventListener("dragstart", (event) => {
+  textItem.addEventListener("touchstart", (event) => {
     event.stopPropagation();
+    event.target.dataset.dragging = true;
     event.dataTransfer.setData("id", textItem.dataset.index);
     document.getElementById("start-audio").play();
   });
   textItem.addEventListener("drag", (event) => {
     textItem.style.opacity = "0";
   });
-  textItem.addEventListener("dragend", (event) => {
+  textItem.addEventListener("touchend", (event) => {
     textItem.style.opacity = "1";
   });
 });
@@ -282,3 +263,21 @@ function stopTimer() {
 }
 
 
+function loadScript(src){
+  var script = document.querySelector(".script");
+  console.log(script);
+  script.src = src;
+  script.async = true;
+  document.head.appendChild(script);
+}
+
+function checkScript(){
+  if('ontouchstart' in window){
+    loadScript('./JS/mobil.js');
+    console.log("mobil");
+  }else{
+    loadScript('./JS/script.js');
+    console.log('computer');
+  }
+}
+checkScript();
