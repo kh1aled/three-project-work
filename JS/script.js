@@ -144,6 +144,28 @@ cardsText.forEach((cardItem) => {
     event.preventDefault();
   });
   cardItem.addEventListener("drop", (event) => {
+    //update value 
+answers++;
+
+var xhr = new XMLHttpRequest();
+
+
+xhr.open('POST', '/update-database', true);
+
+xhr.setRequestHeader('Content-Type', 'application/json');
+
+xhr.send(JSON.stringify({ newValue: answers }));
+
+// تحديد ماذا يحدث عند استلام الرد من الخادم
+xhr.onreadystatechange = function() {
+    if (xhr.readyState === XMLHttpRequest.DONE) {
+        if (xhr.status === 200) {
+            console.log('تم تحديث البيانات بنجاح', xhr.responseText);
+        } else {
+            console.error('حدث خطأ أثناء تحديث البيانات');
+        }
+    }
+};
     event.preventDefault();
     const index = cardItem.dataset.index;
     const textId = event.dataTransfer.getData("id");

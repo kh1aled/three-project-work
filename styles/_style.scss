@@ -223,24 +223,21 @@ $width: 85%;
       width: 20vw;
       height: 15vw;
       position: absolute;
-      bottom: 7%;
+      bottom: -10%;
       left: 42%;
       animation: animateBtn 2s ease-in-out alternate-reverse infinite;
-      @include mediaQuery($smallScreen_max_width) {
-        bottom: 13%;
+      @include mediaQuery($medScreen_max_width){
+        bottom: -16%;
       }
-      @include mediaQuery($medScreen_max_width) {
-        bottom: 12%;
-      }
-      @include mediaQuery($largeScreen_min_width){
-        bottom: 19%;
+      @include mediaQuery($smallScreen_max_width){
+        bottom: -4%;
       }
       
-
       img {
         width: 100%;
         height: 100%;
       }
+
     }
     &.hide {
       animation-name: scaleDown;
