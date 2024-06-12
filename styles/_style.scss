@@ -204,9 +204,9 @@ $width: 85%;
     @extend %fixed-position;
     transform-origin: left top;
     .title-image {
-      width: 80%;
-      height: 75%;
-      left: 15%;
+      width: 70%;
+      height: 100%;
+      left: 32%;
       top: -15%;
       position: relative;
       @include mediaQuery($smallScreen_max_width) {
@@ -224,7 +224,7 @@ $width: 85%;
       height: 15vw;
       position: absolute;
       bottom: -10%;
-      left: 42%;
+      left: 45%;
       animation: animateBtn 2s ease-in-out alternate-reverse infinite;
       @include mediaQuery($medScreen_max_width){
         bottom: -16%;
